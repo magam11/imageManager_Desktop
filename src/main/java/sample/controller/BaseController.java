@@ -26,11 +26,9 @@ import sample.util.HttpRequestMethod;
 import sample.util.HttpUtil;
 import sample.util.Response;
 
-import javax.swing.event.ChangeEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class BaseController {
@@ -66,7 +64,6 @@ public class BaseController {
         tabPane.setVisible(false);
         loginController.initBaseController(this);
         loginController.initCloudController(cloudController);
-
         tabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {

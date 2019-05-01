@@ -1,12 +1,15 @@
 package sample.util;
 
 
+import javafx.fxml.FXMLLoader;
 import org.json.JSONObject;
+import sample.controller.BaseController;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -107,8 +110,14 @@ public class HttpUtil {
             jsonString = jsonString.substring(0, jsonString.length() - 1) + "}";
             System.out.println(jsonString);
             wr.write(jsonString.getBytes(StandardCharsets.UTF_8));
+            return getResponse(con);
+        }catch (ConnectException e){
+            FXMLLoader serverNotFoundModal = new FXMLLoader(HttpUtil.class.getResource("/templates/modal/serverNotFound.fxml"));
+            BaseController baseController = new BaseController();
+            baseController.loadModalByFXMLLoader(serverNotFoundModal);
+
         }
-        return getResponse(con);
+        return new Response();
     }
 
 

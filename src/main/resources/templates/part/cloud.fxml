@@ -50,7 +50,6 @@
                         <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="829.0" prefHeight="34.0" prefWidth="881.0" progress="0.0" />
                         <Label fx:id="percent" layoutX="435.0" layoutY="838.0" text="persent" />
                         <Button fx:id="open_button" layoutX="815.0" layoutY="885.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="82.0" text="Open" />
-
                     </children>
                 </AnchorPane>
             </children>
