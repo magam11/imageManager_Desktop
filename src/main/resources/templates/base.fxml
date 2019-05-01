@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="generalPane" prefHeight="1000.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.BaseController">
+    <content>
+        <AnchorPane fx:id="generalContent_pane" prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #91FFBD;">
+            <children>
+                <AnchorPane fx:id="loginPane_container" layoutX="602.0" layoutY="46.0" prefHeight="297.0" prefWidth="539.0" style="-fx-border-color: #7FFF5F; -fx-border-size: 10;">
+                    <fx:include fx:id="login" source="part/login.fxml" />
+                </AnchorPane>
+                <AnchorPane fx:id="mainContainter" prefHeight="1000.0" prefWidth="1300.0">
+                    <children>
+                        <TabPane fx:id="tabPane" prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #2d756a;" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab fx:id="Cloud_Tab" style="-fx-color: #30a170;" text="Cloud">
+                                    <content>
+                                        <AnchorPane prefHeight="932.0" prefWidth="1300.0">
+                                            <fx:include fx:id="cloud" source="part/cloud.fxml" />
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab style="-fx-color: #30a170;" text="Downloaded">
+                                    <content>
+                                        <AnchorPane fx:id="DownloadTab_cell"  prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #568;">
+                                            <children>
+                                                <fx:include fx:id="download" source="part/download.fxml" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </AnchorPane>
+                <Label fx:id="logout_label" layoutX="1213.0" layoutY="7.0" onMouseClicked="#logut" onMouseEntered="#logoutButton_mouseEntered" onMouseExited="#logoutButton_mouseExited" style="-fx-cursor: hand" text="Logout" textFill="#30a170">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="userName_label" layoutX="1005.0" layoutY="6.0" prefHeight="19.0" prefWidth="172.0" style="-fx-alignment: center;" text="user_name" textFill="#30a170">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>

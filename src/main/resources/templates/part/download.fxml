@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #91FFBD;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DownloadedPageController">
+    <children>
+        <AnchorPane fx:id="DownloadTab" prefHeight="1000.0" prefWidth="1300.0">
+            <children>
+                <VBox layoutX="161.0" layoutY="50.0" prefHeight="1007.0" prefWidth="971.0" style="-fx-alignment: center; -fx-background-color: #BEFFC8;">
+                    <children>
+                        <ListView fx:id="downloadedImageList" prefHeight="1007.0" prefWidth="996.0" style="-fx-background-color: #BEFFC8;" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+    </children>
+</AnchorPane>
