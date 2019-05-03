@@ -14,6 +14,7 @@ public class Main extends Application {
     private Parent rootNode;
     private Scene generalScene;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.initStyle(StageStyle.DECORATED);
