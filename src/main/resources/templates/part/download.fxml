@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #91FFBD;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DownloadedPageController">
+<AnchorPane prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #91FFBD;" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DownloadedPageController">
     <children>
         <AnchorPane fx:id="DownloadTab" prefHeight="1000.0" prefWidth="1300.0">
             <children>

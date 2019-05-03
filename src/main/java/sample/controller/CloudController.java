@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +23,8 @@ import sample.util.HttpRequestMethod;
 import sample.util.HttpUtil;
 import sample.util.Response;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -406,5 +410,26 @@ public class CloudController {
         }
         imageList.setVisible(true);
         imageList.setItems(items);
+    }
+
+    public void openFolder(MouseEvent mouseEvent) throws IOException, InterruptedException {
+        Desktop desktop = Desktop.getDesktop();
+        File dirToOpen = null;
+        try {
+            dirToOpen = new File("C:\\Users\\Maga\\Downloads\\imageManager\\1556706312514_image3.jpg");
+//            desktop.edit(new File("C:\\Users\\Maga\\Downloads\\imageManager\\1556706312514_image3.jpg"));
+            desktop.open(dirToOpen);
+
+        } catch (IllegalArgumentException iae) {
+         iae.printStackTrace();
+        }
+
+//        String fileName = "C:\\Users\\Maga\\Downloads\\imageManager\\1556706312514_image3.jpg";
+//        String [] commands = {
+//                "cmd.exe" , "/c", "start" , "\"DummyTitle\"", "\"" + fileName + "\""
+//        };
+//        Process p = Runtime.getRuntime().exec(commands);
+//        p.waitFor();
+//        System.out.println("Done.");
     }
 }
