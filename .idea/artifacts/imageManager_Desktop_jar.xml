@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="imageManager_Desktop:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/imageManager_Desktop_jar</output-path>
+    <root id="archive" name="imageManager_Desktop.jar">
+      <element id="module-output" name="imageManager_Desktop" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/xerial/sqlite-jdbc/3.8.11.2/sqlite-jdbc-3.8.11.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20160810/json-20160810.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
