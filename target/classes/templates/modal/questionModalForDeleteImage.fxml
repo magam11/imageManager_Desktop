@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="340.0" prefWidth="595.0" style="-fx-background-color: #5AFFD3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.arssystems.imageManager_Desktop.controller.QuestionForDeleteImageController">
+   <children>
+      <Label layoutX="63.0" layoutY="32.0" prefHeight="93.0" prefWidth="469.0" text="Are you sure you want to delete?">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="noButton" layoutX="343.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#negativeAnswer" prefHeight="44.0" prefWidth="112.0" text="No">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="yesButton" layoutX="470.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#positiveAnsWer" prefHeight="44.0" prefWidth="112.0" text="Yes">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="login_AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #BEFFC8; -fx-border-color: #7FFF5F; -fx-border-size: 10;"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.arssystems.imageManager_Desktop.controller.Login">
+    <children>
+        <TextField fx:id="phoneNumber_tf" layoutX="237.0" layoutY="23.0" prefHeight="61.0" prefWidth="309.0" promptText="Phone Number" style="-fx-max-width: 350pt; -fx-alignment: center; -fx-padding: 20px; ">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </TextField>
+        <Button fx:id="login_button" alignment="CENTER" layoutX="253.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="55.0" prefWidth="278.0" style="-fx-background-color: #c8dad7; -fx-border-color: #2d756a; -fx-border-radius: 2; -fx-: center;" text="Login" textFill="#2d756a">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+        <TextField fx:id="verificationCode_textField" layoutX="237.0" layoutY="151.0" prefHeight="61.0" prefWidth="309.0" promptText="Enter the code sent to the specified phone number" />
+        <Label fx:id="codeHint_label" layoutX="237.0" layoutY="97.0" prefHeight="47.0" prefWidth="309.0" text="Enter the code sent to the specified phone number" textFill="#c31717" />
+    </children>
+</AnchorPane>
