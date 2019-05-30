@@ -148,7 +148,7 @@ public class BaseController {
         loginController.phoneNumber_tf.setText("");
         loginController.verificationCode_textField.setText("");
         loginController.verificationCode_textField.setVisible(false);
-        manager.deleteToken();
+//        manager.deleteToken();
         cloudController.delete_icon_mouseHover.setVisible(false);
         cloudController.save_icon_mouseHover.setVisible(false);
     }

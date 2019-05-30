@@ -7,6 +7,11 @@
     <groupId>com.arssystems.imageManager_Desktop</groupId>
     <artifactId>imageManager_Desktop</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -28,54 +33,75 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>imageManager</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <!-- Set a compiler level -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <!-- Make this jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <!--                        <exclude>**/log4j.properties</exclude>-->
+                    </excludes>
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            <addClasspath>true</addClasspath>-->
+<!--                            <mainClass>sample.Main</mainClass>-->
+<!--                            <classpathPrefix>dependency-jars/</classpathPrefix>-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
                 </configuration>
             </plugin>
 
 
+            <!-- Includes the runtime dependencies -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
+                <version>1.4.4</version>
                 <executions>
                     <execution>
-                        <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
                         <goals>
-                            <goal>copy-dependencies</goal>
+                            <goal>one-jar</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>
-                                ${project.build.directory}/libs
-                            </outputDirectory>
+                            <mainClass>com.arssystems.imageManager_Desktop.Main</mainClass>
+                            <filename>byOneJar.jar</filename>
+                            <onejarVersion>0.97</onejarVersion>
                         </configuration>
                     </execution>
                 </executions>
+
             </plugin>
 
-            <plugin>
-                <!-- Build an executable JAR -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <!--                    <useDefaultManifestFile>true</useDefaultManifestFile>-->
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>com.arssystems.imageManager_Desktop.Main</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+
+    <!-- One-Jar is in the googlecode repository -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>onejar-maven-plugin.googlecode.com</id>
+            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 
 </project>
